@@ -1,0 +1,25 @@
+{
+  "name": "sakura-cli",
+  "version": "0.0.1",
+  "description": "a command line tool for develop web apps",
+  "main": "./lib/index.js",
+  "scripts": {
+    "test": "test",
+    "build": "babel src -d lib --presets=es2015"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@git.dawanju.net:zhemu/Sakura.git"
+  },
+  "keywords": [
+    "sakura",
+    "cli",
+    "webapp"
+  ],
+  "author": "century guo",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-preset-es2015": "^6.24.1"
+  }
+}
