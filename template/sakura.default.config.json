@@ -1,0 +1,8 @@
+{
+  "entry": {
+    "index": "./src/index.js"
+  },
+  "projectName": "defaultProjectName",
+  "gitUrl": "https://github.com/guoshencheng/sakura"
+}
+
