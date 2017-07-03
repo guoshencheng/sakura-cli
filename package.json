@@ -1,8 +1,8 @@
 {
+  "bin": "index.js",
   "name": "sakura-cli",
   "version": "0.0.1",
   "description": "a command line tool for develop web apps",
-  "main": "./index.js",
   "scripts": {
     "test": "test",
     "build": "babel src -d lib --presets=es2015",

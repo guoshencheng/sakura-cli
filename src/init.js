@@ -5,5 +5,5 @@ import path from 'path';
 
 module.exports = (config) => {
   var defaultConfig = require('../template/sakura.default.config.json');
-  fs.writeFileSync(path.resolve(cwd, "./sakura.config.js"), JSON.stringify(defaultConfig, null, "  "));
+  fs.writeFileSync(path.resolve(cwd, "./sakura.config.json"), JSON.stringify(defaultConfig, null, "  "));
 }

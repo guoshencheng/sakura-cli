@@ -1,7 +1,7 @@
 {
   "single": true,
   "entry": {
-    "main": "./index.js"
+    "main": "./src/index.jsx"
   },
   "appid": "xxxx",
   "sakuraServer": "http://localhost:3000",

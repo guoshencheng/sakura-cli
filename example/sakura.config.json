@@ -1,8 +1,0 @@
-{
-  "appid": "rkP61rwNZ",
-  "sakuraServer": "http://localhost:3000",
-  "config": {
-    "proxyHost": "http://www.baidu.com",
-    "dingding": true
-  }
-}

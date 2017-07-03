@@ -1,3 +1,7 @@
+#! /usr/bin/env node
+
+"use strict"
+
 var program = require('commander');
 const packageJson = require('./package.json');
 const chalk = require('chalk');
