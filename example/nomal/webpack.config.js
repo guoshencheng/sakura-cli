@@ -14,12 +14,8 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, './dist'),
-    filename: "[name].[hash].js",
+    filename: "[name].js",
     publicPath: "/dist/"
-  },
-  externals:{
-    react: 'React',
-    'react-dom': 'ReactDOM',
   },
   module: {
     loaders: [

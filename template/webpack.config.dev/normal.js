@@ -2,13 +2,13 @@ var webpack = require('webpack')
 var path = require('path')
 var fs = require('fs')
 var sakuraConfig = require('./sakura.config.json');
+var SakuraWebpackPlugin = require('sakura-webpack-plugin');
 module.exports = {
-  entry: sakuraConfig.entry,
   entry: Object.keys(sakuraConfig.entry).reduce((pre, key) => {
     return Object.assign(pre, {
       [key]: path.resolve(__dirname, sakuraConfig.entry[key])
     })
-}, {}),
+  }, {}),
   resolve: {
     extensions: ['.web.js', '.js', '.json'],
   },
@@ -17,14 +17,10 @@ module.exports = {
     filename: "[name].js",
     publicPath: "/dist/"
   },
-  externals:{
-    react: 'React',
-    'react-dom': 'ReactDOM',
-  },
   module: {
     loaders: [
       {
-        test: /.jsx?$/,
+        test: /.js$/,
         loader: 'babel-loader',
         exclude: /node_modules/,
         query: {
@@ -56,14 +52,18 @@ module.exports = {
     ]
   },
   plugins:[
+    new SakuraWebpackPlugin({
+      prefix: "http://yourhost/",
+      single: true
+    }),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: JSON.stringify('development'),
-        isBrowse: true
       },
     }),
   ],
   devtool: 'source-map'
 }
+
 

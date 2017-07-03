@@ -3,6 +3,7 @@ import chalk from 'chalk';
 import fs from 'fs';
 import ejs from 'ejs';
 import path from 'path';
+import init from './init.js';
 const pwd = process.cwd()
 
 prompt.message = "Sakura";
@@ -18,10 +19,6 @@ const schema = (name) => {
       name: {
         description: "项目名称("+ name +")",
         require: true,
-      },
-      gitUrl: {
-        description: "请输入项目仓库地址(git)",
-        require: true
       }
     }
   }
@@ -69,5 +66,6 @@ module.exports = (config) => {
     createDir(outConfig);
     renderPackageJson(outConfig);
     renderWebpackConfig(outConfig);
+    init(outConfig)
   })
 }
