@@ -1,5 +1,5 @@
 {
-  "name": "<%- name %>",
+  "name": "react",
   "version": "1.0.0",
   "description": "sakura project",
   "main": "index.js",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "<%- gitUrl %>"
+    "url": "https://github.com/guoshencheng/Sakura/example/react"
   },
   "keywords": [
     "sakura ..."
@@ -28,8 +28,8 @@
     "babel-preset-react": "^6.16.0",
     "css-loader": "^0.26.1",
     "node-sass": "^3.13.0",
-    "raw-loader": "^0.5.1",
     "react": "^15.4.1",
+    "react-dom": "^15.4.1",
     "sass-loader": "^4.0.2",
     "style-loader": "^0.13.1",
     "webpack": "^1.14.0",

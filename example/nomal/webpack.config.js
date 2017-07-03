@@ -2,19 +2,19 @@ var webpack = require('webpack')
 var path = require('path')
 var fs = require('fs')
 var sakuraConfig = require('./sakura.config.json');
+var SakuraWebpackPlugin = require('sakura-webpack-plugin');
 module.exports = {
-  entry: sakuraConfig.entry,
   entry: Object.keys(sakuraConfig.entry).reduce((pre, key) => {
     return Object.assign(pre, {
       [key]: path.resolve(__dirname, sakuraConfig.entry[key])
     })
-}, {}),
+  }, {}),
   resolve: {
     extensions: ['.web.js', '.js', '.json'],
   },
   output: {
     path: path.resolve(__dirname, './dist'),
-    filename: "[name].js",
+    filename: "[name].[hash].js",
     publicPath: "/dist/"
   },
   externals:{
@@ -56,6 +56,10 @@ module.exports = {
     ]
   },
   plugins:[
+    new SakuraWebpackPlugin({
+      prefix: "http://img.maihaoche.com/",
+      single: true
+    }),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.DefinePlugin({
       'process.env': {
@@ -66,3 +70,4 @@ module.exports = {
   ],
   devtool: 'source-map'
 }
+

@@ -3,11 +3,10 @@
   "entry": {
     "main": "./index.js"
   },
-  "appid": "xxxx",
+  "appid": "rkP61rwNZ",
   "sakuraServer": "http://localhost:3000",
   "config": {
-    "proxyHost": "http://www.proxyHost.com",
-    "dingding": false
+    "proxyHost": "http://www.baidu.com",
+    "dingding": true
   }
 }
-
