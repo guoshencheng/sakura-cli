@@ -4,6 +4,7 @@ import path from 'path';
 import cookieParser from 'cookie-parser';
 import bodyParser from 'body-parser';
 import chalk from 'chalk';
+import axios from 'axios';
 import session from 'express-session';
 var cwd = process.cwd();
 var router = express.Router();
@@ -61,18 +62,18 @@ router.all('/:appid*', (req, res, next) => {
   const appid = req.params.appid;
   const method = req.method;
   const path = req.params[0];
-  const authPath = sakuraConfig.auth.path;
-  const authKey = sakuraConfig.auth.key;
+  const authPath = sakuraConfig.config.auth.path;
+  const authKey = sakuraConfig.config.auth.key;
   const sessionInfo = req.session[appid] || {};
   axios({
     method, 
     url: proxyHost + path,
     params: Object.assign({ [authKey]: sessionInfo[authKey] }, req.query),
-    data: Object.assign({ [authKey]: sessionInfo[authKey] }, req.body })
+    data: Object.assign({ [authKey]: sessionInfo[authKey] }, req.body)
   }).then(response => {
     if (path == authPath && response.status == 200 && response.data) {
       const authInfo = {
-        [sakuraConfig.auth.key]: authInfoFromData(response.data)
+        [authKey]: authInfoFromData(response.data)
       }
       req.session[appid] = authInfo;
     } 

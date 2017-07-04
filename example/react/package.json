@@ -4,15 +4,11 @@
   "description": "sakura project",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server --port 3000 --hot --inline",
-    "build": "NODE_ENV=production webpack --progress --display-error-details --config webpack.config.product.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/guoshencheng/Sakura/example/normal"
+    "start": "webpack-dev-server --port 3000 --hot --inline"
   },
   "author": "developer",
   "dependencies": {
+    "axios": "^0.16.2",
     "babel-cli": "^6.18.0",
     "babel-core": "^6.18.2",
     "babel-loader": "^6.2.8",
@@ -20,6 +16,9 @@
     "babel-preset-react": "^6.24.1",
     "css-loader": "^0.28.4",
     "extract-text-webpack-plugin": "^2.1.2",
+    "gulp": "^3.9.1",
+    "gulp-qiniu": "^0.2.4",
+    "gulp-wantu": "^0.0.5",
     "node-sass": "^4.5.3",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",

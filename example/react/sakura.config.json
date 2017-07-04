@@ -1,12 +1,19 @@
 {
   "single": true,
   "entry": {
-    "main": "./src/index.jsx"
+    "main": "./index.js"
   },
   "appid": "xxxx",
   "sakuraServer": "http://localhost:3000",
   "config": {
-    "proxyHost": "http://www.proxyHost.com",
-    "dingding": false
+    "proxyHost": "https://faw.maihaoche.com",
+    "dingding": false,
+    "auth": {
+      "key": "sessionId",
+      "path": "/login.json",
+      "valuePath": [
+        "sessionId"
+      ]
+    }
   }
 }
