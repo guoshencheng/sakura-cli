@@ -11,13 +11,13 @@ const schema = (name) => {
   return {
     properties: {
       tech: {
-        description: "项目采用什么技术，现已经支持(react, normal)，default is normal",
-        message: "请选择react或者normal",
+        description: "react or normal ?",
+        message: "only inut react or normal !",
         require: true,
         pattern: /react|normal/
       },
       name: {
-        description: "项目名称("+ name +")",
+        description: "project name ? ("+ name +")",
         require: true,
       }
     }
@@ -75,6 +75,7 @@ const renderGulpfile = (config) => {
   var gulpfileString = fs.readFileSync(path.resolve(__dirname, "../template/gulpfile.js"), "utf-8");
   fs.writeFileSync(path.resolve(cwd, "./" + config.name + "/gulpfile.js"), gulpfileString);
   console.log("Sakura-cli:", chalk.green("→ create gulpfile.js success"));
+  console.log("Sakura-cli:", chalk.yellow("→ Do not forget replace your own cdn keys at gulpfile.js!"))
 }
 
 const renderStyle = (config) => {
