@@ -77,6 +77,12 @@ const renderGulpfile = (config) => {
   console.log("Sakura-cli:", chalk.green("→ create gulpfile.js success"));
 }
 
+const renderStyle = (config) => {
+  var styleString = fs.readFileSync(path.resolve(__dirname, "../template/style.scss"), "utf-8");
+  fs.writeFileSync(path.resolve(cwd, "./" + config.name + "/style.scss"), styleString);
+  console.log("Sakura-cli:", chalk.green("→ create style.scss success"));
+}
+
 module.exports = (config) => {
   prompt.start();
   prompt.get(schema(config.name), (err, result) => {
@@ -92,5 +98,6 @@ module.exports = (config) => {
     renderSakuraConfig(outConfig);
     renderIndex(outConfig);
     renderGulpfile(outConfig);
+    renderStyle(outConfig);
   })
 }

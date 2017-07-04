@@ -2,6 +2,7 @@
 
 import { Component } from 'react';
 import { render } from 'react-dom';
+require('./style.scss');
 
 class Custom extends Component {
   constructor(props) {
@@ -10,7 +11,10 @@ class Custom extends Component {
 
   render() {
     return (
-      <div className="custom"></div>
+      <div className="custom">
+        <h1>Sakura-Cli</h1>
+        <p>Welcome to Sakura-Cli, Replace me</p>
+      </div>
     )
   }
 }
