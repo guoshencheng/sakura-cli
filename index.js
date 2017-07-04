@@ -21,4 +21,8 @@ program.command("publish").action(function() {
   lib.publish()
 })
 
+program.command("proxy").action(function() {
+  lib.proxy();
+})
+
 program.parse(process.argv);

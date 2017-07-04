@@ -7,7 +7,12 @@
   "sakuraServer": "http://localhost:3000",
   "config": {
     "proxyHost": "http://www.proxyHost.com",
-    "dingding": false
+    "dingding": false,
+    "auth": {
+      "key": "sessionId",
+      "path": "/login.json",
+      "valuePath": ["sessionId"] 
+    }
   }
 }
 
