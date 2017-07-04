@@ -5,6 +5,7 @@ var path = require('path')
 var fs = require('fs')
 var base = require('./webpack.config.js');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
+var SakuraWebpackPlugin = require('./sakura-webpack-plugin.js');
 var production = Object.assign({}, base);
 
 var cssLoader = {
@@ -51,6 +52,10 @@ production.module.loaders = base.module.loaders.map((value) => {
 })
 
 production.plugins = [
+  new SakuraWebpackPlugin({
+      prefix: "http://img.maihaoche.com/",
+      single: true
+    }),
   new webpack.optimize.UglifyJsPlugin({
     compress: {
       warnings: false

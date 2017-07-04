@@ -6,6 +6,7 @@ var fs = require('fs')
 var base = require('./webpack.config.js');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var production = Object.assign({}, base);
+var SakuraWebpackPlugin = require('sakura-webpack-plugin');
 
 var cssLoader = {
   loader: "css-loader",
@@ -51,6 +52,10 @@ production.module.loaders = base.module.loaders.map((value) => {
 })
 
 production.plugins = [
+  new SakuraWebpackPlugin({
+    prefix: "http://yourhost/",
+    single: true
+  }),
   new webpack.optimize.UglifyJsPlugin({
     compress: {
       warnings: false
