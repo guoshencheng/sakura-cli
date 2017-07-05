@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@git.dawanju.net:zhemu/Sakura.git"
+    "url": "https://github.com/guoshencheng/sakura-cli"
   },
   "keywords": [
     "sakura",
