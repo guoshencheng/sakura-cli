@@ -19,6 +19,7 @@ module.exports = () => {
     console.log(chalk.red("Error → without sakura config file"))
     process.exit(1);
   }
+  var defaultResources = sakuraConfig.defaultResources || {} ;
   try {
     resources = require(path.resolve(pwd, "./sakura.resources.json"));
   } catch (e) { /* handle error */ }
@@ -41,8 +42,8 @@ module.exports = () => {
     }
   }
   axios.post(sakuraServer + `/api/v1/webapps/${appid}/resources`, {
-    javascripts: resources.javascripts.join(','),
-    styles: resources.styles.join(','),
+    javascripts: resources.javascripts.concat(defaultResources.javascripts || []).join(','),
+    styles: resources.styles.concat(defaultResources.styles || []).join(','),
     version: resources.hash,
     type, html
   }).then(response => {

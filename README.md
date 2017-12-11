@@ -49,6 +49,10 @@ PORT=4000 sakura-cli proxy
 
 ### sakura.config.json
 
+###### defaultResources: { javascripts: [], styles: [] }
+
+默认导入的资源, 不关注sakura.resources.json，无论如何都会被使用
+
 ###### single
 
 是否为单页应用
@@ -74,10 +78,3 @@ PORT=4000 sakura-cli proxy
 `wechat`: 关于是否需要微信的配置
 
 `auth`: 用于处理关于请求的一些auth信息(解决关于转发请求需要sessionId之类的认证信息的问题)(`key`: 认证信息的字段名, `path`: 认证信息的登录path，`valuePath`: 认证登录后的data去到认证信息的路径)
-
-
-
-
-
-
-

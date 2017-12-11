@@ -11,8 +11,7 @@
     "auth": {
       "key": "sessionId",
       "path": "/login.json",
-      "valuePath": ["sessionId"] 
+      "valuePath": ["sessionId"]
     }
   }
 }
-
