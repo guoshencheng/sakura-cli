@@ -42,8 +42,8 @@ module.exports = () => {
     }
   }
   axios.post(sakuraServer + `/api/v1/webapps/${appid}/resources`, {
-    javascripts: resources.javascripts.concat(defaultResources.javascripts || []).join(','),
-    styles: resources.styles.concat(defaultResources.styles || []).join(','),
+    javascripts: (defaultResources.javascripts || []).concat(resources.javascripts || []).join(','),
+    styles: (defaultResources.styles || []).concat(resources.styles || []).join(','),
     version: resources.hash,
     type, html
   }).then(response => {
