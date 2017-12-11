@@ -47,12 +47,11 @@ module.exports = () => {
     type, html
   }).then(response => {
     if (response.status == 200 && response.data) {
-      console.log(chalk.green("→ success upload"))
+      console.log(chalk.green("→ success upload, version is " + resources.hash))
     } else {
       console.log(chalk.red("→ fail upload with status: " + response.status))
     }
   }).catch(error => {
-    console.log(error)
     console.log(chalk.red("→ fail upload"), "资源已上传或者资源服务器错误")
   })
 }

@@ -25,4 +25,8 @@ program.command("proxy").action(function() {
   lib.proxy();
 })
 
+program.command("start").action(function() {
+  lib.start();
+})
+
 program.parse(process.argv);

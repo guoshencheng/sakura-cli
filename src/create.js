@@ -43,7 +43,7 @@ const createDir = (config) => {
 }
 
 const renderPackageJson = (config) => {
-  var template = ejs.compile(fs.readFileSync(path.resolve(__dirname, "../template/packageJson/" + config.tech + ".package.json"), 'utf-8'));  
+  var template = ejs.compile(fs.readFileSync(path.resolve(__dirname, "../template/packageJson/" + config.tech + ".package.json"), 'utf-8'));
   var fileString = template(config);
   fs.writeFileSync(path.resolve(cwd, "./" + config.name + "/package.json"), fileString)
   console.log("Sakura-cli:", chalk.green("→ create pacakage.json success"));
